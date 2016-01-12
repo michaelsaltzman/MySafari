@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		FE8C616A1C45AEAC0089082B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8C61691C45AEAC0089082B /* main.m */; };
 		FE8C616D1C45AEAC0089082B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8C616C1C45AEAC0089082B /* AppDelegate.m */; };
-		FE8C61701C45AEAC0089082B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8C616F1C45AEAC0089082B /* ViewController.m */; };
 		FE8C61731C45AEAC0089082B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8C61711C45AEAC0089082B /* Main.storyboard */; };
 		FE8C61751C45AEAC0089082B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8C61741C45AEAC0089082B /* Assets.xcassets */; };
 		FE8C61781C45AEAC0089082B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8C61761C45AEAC0089082B /* LaunchScreen.storyboard */; };
+		FE8C61811C45BC220089082B /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8C61801C45BC220089082B /* WebViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +20,12 @@
 		FE8C61691C45AEAC0089082B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE8C616B1C45AEAC0089082B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE8C616C1C45AEAC0089082B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FE8C616E1C45AEAC0089082B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FE8C616F1C45AEAC0089082B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FE8C61721C45AEAC0089082B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE8C61741C45AEAC0089082B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE8C61771C45AEAC0089082B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE8C61791C45AEAD0089082B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE8C617F1C45BC220089082B /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
+		FE8C61801C45BC220089082B /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +58,12 @@
 		FE8C61671C45AEAC0089082B /* MySafari */ = {
 			isa = PBXGroup;
 			children = (
+				FE8C61711C45AEAC0089082B /* Main.storyboard */,
+				FE8C617F1C45BC220089082B /* WebViewViewController.h */,
+				FE8C61801C45BC220089082B /* WebViewViewController.m */,
+				FE8C61741C45AEAC0089082B /* Assets.xcassets */,
 				FE8C616B1C45AEAC0089082B /* AppDelegate.h */,
 				FE8C616C1C45AEAC0089082B /* AppDelegate.m */,
-				FE8C616E1C45AEAC0089082B /* ViewController.h */,
-				FE8C616F1C45AEAC0089082B /* ViewController.m */,
-				FE8C61711C45AEAC0089082B /* Main.storyboard */,
-				FE8C61741C45AEAC0089082B /* Assets.xcassets */,
 				FE8C61761C45AEAC0089082B /* LaunchScreen.storyboard */,
 				FE8C61791C45AEAD0089082B /* Info.plist */,
 				FE8C61681C45AEAC0089082B /* Supporting Files */,
@@ -149,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE8C61701C45AEAC0089082B /* ViewController.m in Sources */,
+				FE8C61811C45BC220089082B /* WebViewViewController.m in Sources */,
 				FE8C616D1C45AEAC0089082B /* AppDelegate.m in Sources */,
 				FE8C616A1C45AEAC0089082B /* main.m in Sources */,
 			);

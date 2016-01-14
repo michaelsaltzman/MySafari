@@ -8,9 +8,10 @@
 
 #import "WebViewViewController.h"
 
-@interface WebViewViewController () <UIWebViewDelegate>;
+@interface WebViewViewController () <UIWebViewDelegate, UITextFieldDelegate>;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *networkSpinner;
 
 @end
 
@@ -18,22 +19,69 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.networkSpinner.hidden = YES;
+    
+    
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.networkSpinner stopAnimating];
+    self.networkSpinner.hidden = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [self.networkSpinner startAnimating];
+    self.networkSpinner.hidden = NO;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)onBackButtonPressed:(id)sender {
+    if (self.webView.canGoBack == YES) {
+    [self.webView goBack];
+    [sender setEnabled: YES];
+    }
+    else {
+        [sender setEnabled: NO];
+    }
 }
-*/
 
+- (IBAction)onForwardButtonPressed:(id)sender {
+    [self.webView goForward];
+}
+
+- (IBAction)onStopLoadingButtonPressed:(id)sender {
+    [self.webView stopLoading];
+}
+
+- (IBAction)onReloadButtonPressed:(id)sender {
+    [self.webView reload];
+}
+
+- (IBAction)onPlusButtonPressed:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Coming soon!"
+                                                                             message:@"Fuck coding"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Move on bro"
+                                                          style:(UIAlertActionStyleDefault)
+                                                        handler:^(UIAlertAction * _Nonnull action) {
+                                                            //
+                                                        }];
+    
+    [alertController addAction:alertAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (![self.urlTextField.text containsString:@"http://"]) {
+        self.urlTextField.text = [[NSString stringWithFormat:@"http://"] stringByAppendingString:self.urlTextField.text];
+    }
+    
+    NSURL *url = [NSURL URLWithString:self.urlTextField.text];
+    NSURLRequest *requestUrl = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestUrl];
+    return YES;
+}
 @end
+
